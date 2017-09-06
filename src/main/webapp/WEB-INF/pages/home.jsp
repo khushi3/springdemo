@@ -11,7 +11,7 @@
 </head>
 <body>
 	<div align="center">
-		<h1>Employee List</h1>
+		<h1></h1><spring:message code="label.employee.header"/></h1>
 		
 		<table border="1">
           <tr>
@@ -37,7 +37,6 @@
 			</c:forEach>
 		</table>
 		<h4>
-		${listEmployee}
 			Add New Employee <a href="newEmployee">here</a>
 		</h4>
 	</div>
