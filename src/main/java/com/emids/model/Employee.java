@@ -22,7 +22,13 @@ public class Employee implements Serializable {
     @Column
     private String name;
  
-    @Column
+    @Override
+	public String toString() {
+		return String.format("Employee [id=%s, name=%s, email=%s, address=%s, telephone=%s]", id, name, email, address,
+				telephone);
+	}
+
+	@Column
     private String email;
  
     @Column

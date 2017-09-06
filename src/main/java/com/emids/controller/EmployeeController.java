@@ -2,7 +2,7 @@ package com.emids.controller;
 
 import java.io.IOException;
 import java.util.List;
- 
+
 import javax.servlet.http.HttpServletRequest;
  
 import org.jboss.logging.Logger;
@@ -30,14 +30,16 @@ public class EmployeeController {
  
     @RequestMapping(value = "/")
     public ModelAndView listEmployee(ModelAndView model) throws IOException {
-        List<Employee> listEmployee = employeeService.getAllEmployees();
-        model.addObject("listEmployee", listEmployee);
+        List<Employee> listOfEmployee = employeeService.getAllEmployees();
+        model.addObject("listOfEmployee", listOfEmployee);
+        System.out.println("list"+listOfEmployee);
+        System.out.println(model);
         model.setViewName("home");
         return model;
     }
  
     @RequestMapping(value = "/newEmployee", method = RequestMethod.GET)
-    public ModelAndView newContact(ModelAndView model) {
+    public ModelAndView newEmployee(ModelAndView model) {
         Employee employee = new Employee();
         model.addObject("employee", employee);
         model.setViewName("EmployeeForm");
@@ -46,8 +48,7 @@ public class EmployeeController {
  
     @RequestMapping(value = "/saveEmployee", method = RequestMethod.POST)
     public ModelAndView saveEmployee(@ModelAttribute Employee employee) {
-        if (employee.getId() == 0) { // if employee id is 0 then creating the
-            // employee other updating the employee
+        if (employee.getId() == 0) {
             employeeService.addEmployee(employee);
         } else {
             employeeService.updateEmployee(employee);

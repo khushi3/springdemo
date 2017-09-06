@@ -3,6 +3,7 @@ package com.emids.dao;
 import java.util.List;
 
 import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
  
@@ -22,8 +23,10 @@ public class EmployeeDAOImpl implements EmployeeDAO {
     @SuppressWarnings("unchecked")
     public List<Employee> getAllEmployees() {
  
-        return sessionFactory.getCurrentSession().createQuery("from Employee")
-                .list();
+        Query query = sessionFactory.getCurrentSession().createQuery("from Employee");
+				List<Employee> list =  query.list();
+				System.out.println(list);
+                return list;
     }
  
     @Override
