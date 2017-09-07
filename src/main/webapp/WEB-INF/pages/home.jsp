@@ -11,9 +11,9 @@
 <title>Employee Management Screen</title>
 </head>
 <body>
+<h2>Welcome ${name}</h2>
 	<div align="center">
 		<h1><spring:message code="label.employee.header"/></h1>
-		
 		<table border="1">
           <tr>
 			<th><spring:message code="label.name"/></th>
@@ -38,7 +38,10 @@
 			</c:forEach>
 		</table>
 		<h4>
-			<spring:message code="label.newemployee.header"/> <a href="newEmployee"><spring:message code="label.newEmployee.button"/></a>
+			<spring:message code="label.newemployee.header"/>
+			 <a href="empList"><spring:message code="label.newEmployee.button"/></a>
+			 <a href="newEmployee"><spring:message code="label.newEmployee.button"/></a>
+			
 		</h4>
 	</div>
 </body>
