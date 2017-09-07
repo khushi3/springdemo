@@ -2,6 +2,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
    "http://www.w3.org/TR/html4/loose.dtd">
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 <html>
 <head>
@@ -11,15 +12,15 @@
 </head>
 <body>
 	<div align="center">
-		<h1></h1><spring:message code="label.employee.header"/></h1>
+		<h1><spring:message code="label.employee.header"/></h1>
 		
 		<table border="1">
           <tr>
-			<th>Name</th>
-			<th>Email</th>
-			<th>Address</th>
-			<th>Telephone</th>
-			<th>Action</th>
+			<th><spring:message code="label.name"/></th>
+			<th><spring:message code="label.email"/></th>
+			<th><spring:message code="label.address"/></th>
+			<th><spring:message code="label.telephone"/></th>
+			<th><spring:message code="label.action"/></th>
            </tr>
 			<c:forEach var="employee" items="${listOfEmployee}">
 			
@@ -37,7 +38,7 @@
 			</c:forEach>
 		</table>
 		<h4>
-			Add New Employee <a href="newEmployee">here</a>
+			<spring:message code="label.newemployee.header"/> <a href="newEmployee"><spring:message code="label.newEmployee.button"/></a>
 		</h4>
 	</div>
 </body>
