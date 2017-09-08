@@ -9,16 +9,18 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.emids.service.LoginService;
 
+
 @Controller
 public class LoginController {
 	
 	@Autowired
-	LoginService loginService;
-	
+	private LoginService loginService;
+
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String showLoginPage() {
 		return "login";
 	}
+
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String handleUserLogin(ModelMap model, @RequestParam String name,
 			@RequestParam String password) {
@@ -31,5 +33,4 @@ public class LoginController {
 		model.put("name", name);
 		return "home";
 	}
-
 }

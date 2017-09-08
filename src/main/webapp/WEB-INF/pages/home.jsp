@@ -39,10 +39,12 @@
 		</table>
 		<h4>
 			<spring:message code="label.newemployee.header"/>
-			 <a href="empList"><spring:message code="label.newEmployee.button"/></a>
 			 <a href="newEmployee"><spring:message code="label.newEmployee.button"/></a>
-			
 		</h4>
+		<%-- <h4>
+			<spring:message code="label.header"/>
+			 <a href="employeeList"><spring:message code="label.newEmployee.button"/></a>
+		</h4> --%>
 	</div>
 </body>
 </html>
