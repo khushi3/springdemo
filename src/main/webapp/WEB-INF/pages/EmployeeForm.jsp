@@ -23,7 +23,7 @@
             </tr>
             <tr>
                 <td>Email:</td>
-                <td><form:input path="email" /></td>
+                <td><form:input type="email" path="email" /></td>
             </tr>
             <tr>
                 <td>Address:</td>
@@ -31,7 +31,7 @@
             </tr>
             <tr>
                 <td>Telephone:</td>
-                <td><form:input path="telephone" /></td>
+                <td><form:input type="number"  path="telephone" /></td>
             </tr>
             <tr>
                 <td><input type="submit" class="btn btn-success" value=<spring:message code="label.submitButton"/>></td>
