@@ -9,11 +9,13 @@
  <%@ page isELIgnored="false" %>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Employee Management Screen</title>
+<link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 <h2>Welcome ${name}</h2>
 	<div align="center">
 		<h1><spring:message code="label.employee.header"/></h1>
+		<div class="container">
 		<table border="1">
           <tr>
 			<th><spring:message code="label.name"/></th>
@@ -37,12 +39,17 @@
 				</tr>
 			</c:forEach>
 		</table>
+		</div>
 		<h4>
 			<spring:message code="label.newemployee.header"/>
-			 <a href="empList"><spring:message code="label.newEmployee.button"/></a>
 			 <a href="newEmployee"><spring:message code="label.newEmployee.button"/></a>
-			
 		</h4>
+		<%-- <h4>
+			<spring:message code="label.header"/>
+			 <a href="employeeList"><spring:message code="label.newEmployee.button"/></a>
+		</h4> --%>
 	</div>
+	<script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+	    <script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </body>
 </html>

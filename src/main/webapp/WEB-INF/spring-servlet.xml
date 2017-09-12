@@ -22,6 +22,7 @@
  
     <!-- Specifying the Resource location to load JS, CSS, Images etc -->
     <mvc:resources mapping="/resources/**" location="/resources/" />
+    <mvc:resources mapping="/webjars/**" location="/webjars/"/>
  
     <!-- View Resolver -->
     <bean

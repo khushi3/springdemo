@@ -8,12 +8,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Employee Details</title>
+<link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
 </head>
 <body>
-    <div align="center">
+<div class="container">
         <h1><spring:message code="label.header"/></h1>
         <form:form action="saveEmployee" method="post" modelAttribute="employee">
-        <table>
+        <table class="table table-striped">
             <form:hidden path="id"/>
             <tr>
                 <td>Name:</td>
@@ -32,10 +34,12 @@
                 <td><form:input path="telephone" /></td>
             </tr>
             <tr>
-                <td colspan="2" align="center"><input type="submit" value=<spring:message code="label.submitButton"/>></td>
+                <td><input type="submit" class="btn btn-success" value=<spring:message code="label.submitButton"/>></td>
             </tr>
         </table>
         </form:form>
     </div>
+    <script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+	<script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </body>
 </html>
