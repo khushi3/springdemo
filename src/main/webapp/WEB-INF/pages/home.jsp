@@ -34,7 +34,7 @@
 
 					<td>${employee.name}</td>
 					<td>${employee.email}</td>
-					<td>${employee.address}</td>
+					<td><a href="employeeAddress?id=${employee.id}">${employee.address}</a></td>
 					<td>${employee.telephone}</td>
 					<td><a href="editEmployee?id=${employee.id}">Edit</a><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
 						&nbsp;&nbsp;&nbsp;&nbsp; <a class="btn btn-danger"
@@ -45,11 +45,9 @@
 		</table>
 		
 		</div>
-		
-		<%-- <h4>
-			<spring:message code="label.header"/>
-			 <a href="employeeList"><spring:message code="label.newEmployee.button"/></a>
-		</h4> --%>
+	<%-- <div> <a class="btn btn-danger"
+						href="deleteEmployee?id=${employee.id}">Delete</a
+	</div> --%>
 	</div>
 	<script src="webjars/jquery/1.9.1/jquery.min.js"></script>
 	<script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>

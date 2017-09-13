@@ -14,7 +14,7 @@
 <body>
 <div class="container" style="text-align: center">
     <p><font color="red">${errorMessage}</font></p>
-    <form action="/" method="POST">
+    <form action="employeeList" method="POST">
     <fieldset class="form-group">
        <label>Name</label> 
        <input name="name" type="text" required="required" /> 

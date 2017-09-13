@@ -2,6 +2,7 @@ package com.emids.service;
 
 import java.util.List;
 
+import com.emids.model.Address;
 import com.emids.model.Employee;
  
 public interface EmployeeService {
@@ -15,4 +16,6 @@ public interface EmployeeService {
     public Employee getEmployee(int employeeid);
  
     public Employee updateEmployee(Employee employee);
+
+	public List<Address> getAddress(int employeeId);
 }
