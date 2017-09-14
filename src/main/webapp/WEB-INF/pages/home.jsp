@@ -45,9 +45,10 @@
 		</table>
 		
 		</div>
-	<%-- <div> <a class="btn btn-danger"
-						href="deleteEmployee?id=${employee.id}">Delete</a
-	</div> --%>
+		<div class="container">
+	<div class="pull-right"><spring:message code="label.exposeData"/> <a class="btn btn-primary" href="employeeJsonData">Expose jsonData</a></div>
+	<div class="pull-left"><spring:message code="label.exportAsPdf"/> <a class="btn btn-primary" href="downloadPDF">Export Pdf</a></div>
+	</div>
 	</div>
 	<script src="webjars/jquery/1.9.1/jquery.min.js"></script>
 	<script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>

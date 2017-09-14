@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
  
 import com.emids.dao.EmployeeDAO;
+import com.emids.model.Address;
 import com.emids.model.Employee;
  
 @Service
@@ -46,5 +47,19 @@ public class EmployeeServiceImpl implements EmployeeService {
     public void setEmployeeDAO(EmployeeDAO employeeDAO) {
         this.employeeDAO = employeeDAO;
     }
- 
+    /*Address Dao*/
+    
+    @Override
+    @Transactional
+    public List<Address> getAllAddress() {
+        return employeeDAO.getAllAddress();
+    }
+    @Override
+    @Transactional
+    public void addAddress(Address address) {
+        employeeDAO.addAddress(address);
+    }
+    public Address getAddress(int empid) {
+        return employeeDAO.getAddress(empid);
+    }
 }

@@ -17,5 +17,10 @@ public interface EmployeeService {
  
     public Employee updateEmployee(Employee employee);
 
-	public List<Address> getAddress(int employeeId);
+	public List<Address> getAllAddress();
+	
+	public void addAddress(Address Address);
+	
+	 public Address getAddress(int employeeid);
+ 
 }

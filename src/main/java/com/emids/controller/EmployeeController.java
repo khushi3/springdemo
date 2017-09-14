@@ -1,9 +1,13 @@
 package com.emids.controller;
 
+import java.awt.Color;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.codehaus.jackson.JsonGenerationException;
 import org.codehaus.jackson.map.JsonMappingException;
@@ -11,6 +15,7 @@ import org.codehaus.jackson.map.ObjectMapper;
 import org.jboss.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -20,6 +25,12 @@ import org.springframework.web.servlet.ModelAndView;
 import com.emids.model.Address;
 import com.emids.model.Employee;
 import com.emids.service.EmployeeService;
+import com.emids.view.PdfEmpListReport;
+import com.itextpdf.text.Chunk;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.Font;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfWriter;
  
 @Controller 
 public class EmployeeController {
@@ -48,9 +59,8 @@ public class EmployeeController {
   //Get Address
   	@RequestMapping(value = "/employeeAddress", method = RequestMethod.GET)
   	public ModelAndView showAddress(HttpServletRequest request) {
-  		int employeeId = Integer.parseInt(request.getParameter("id"));
-  		List<Address> listOfaddress = employeeService.getAddress(employeeId);
-  		ModelAndView model = new ModelAndView("AddressList");
+  		List<Address> listOfaddress = employeeService.getAllAddress();
+  		ModelAndView model = new ModelAndView("address");
   		model.addObject("listOfaddress", listOfaddress);
   		return model;
   	}
@@ -63,7 +73,20 @@ public class EmployeeController {
   		model.setViewName("addressForm");
   		return model;
   	}
-  	
+  	//save Address
+  	 @RequestMapping(value = "/saveEmployeeAddress", method = RequestMethod.POST)
+     public ModelAndView saveAddress(@ModelAttribute Address address) {
+             employeeService.addAddress(address);
+         return new ModelAndView("redirect:/employeeAddress");
+     }
+  	 
+  	//save Address
+  	 @RequestMapping(value = "/backToEmployee", method = RequestMethod.GET)
+     public ModelAndView backToEmployeePage(@ModelAttribute Address address) {
+             employeeService.addAddress(address);
+         return new ModelAndView("redirect:/employeeList");
+     }
+  	 
     @RequestMapping(value = "/employeeList")
     public ModelAndView listEmployee(ModelAndView model) throws IOException {
         List<Employee> listOfEmployee = employeeService.getAllEmployees();
@@ -131,5 +154,29 @@ public class EmployeeController {
  
         return model;
     }
+  /*  generate pdf*/
+    @RequestMapping(value= "/downloadPDF", method = RequestMethod.GET)
+    public ModelAndView getDocuments(ModelAndView model) {
+    	 List<Employee> listOfEmployee = employeeService.getAllEmployees();
+    	 return new ModelAndView(new PdfEmpListReport(), "employeeList", listOfEmployee);
+       // model.addAttribute("listOfEmployee", listOfEmployee);
+       // return "EmployeePdf";
+
+    }
+    //@RequestMapping(value = "/generatepdf", method = RequestMethod.GET)
+  // public ModelAndView generatePdf(HttpServletRequest request,
+    //  HttpServletResponse response,Model model) throws Exception {
+    // System.out.println("Calling generatePdf()...");
+   // List<Employee> listOfEmployee = employeeService.getAllEmployees();
+    /* Employee employee = new Employee();
+     employee.setName("Yashwant");
+     employee.setEmail("Chavan@gmail.com");*/
+     
+    // model.addAttribute("listOfEmployee", listOfEmployee);
+    // ModelAndView modelAndView = new ModelAndView("EmployeePdf", "command",listOfEmployee);
+    // return modelAndView;
+   // }
+ 
+    
  
 }

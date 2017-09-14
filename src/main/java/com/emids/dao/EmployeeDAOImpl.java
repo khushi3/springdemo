@@ -6,7 +6,8 @@ import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
- 
+
+import com.emids.model.Address;
 import com.emids.model.Employee;
  
 @Repository
@@ -28,6 +29,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 				System.out.println(list);
                 return list;
     }
+
  
     @Override
     public void deleteEmployee(Integer employeeId) {
@@ -49,5 +51,26 @@ public class EmployeeDAOImpl implements EmployeeDAO {
         sessionFactory.getCurrentSession().update(employee);
         return employee;
     }
- 
+    /*    get address from address table
+     * 
+    */   
+        @SuppressWarnings("unchecked")
+        public List<Address> getAllAddress() {
+     
+            Query query = sessionFactory.getCurrentSession().createQuery("from Address");
+    				List<Address> list =  query.list();
+    				System.out.println(list);
+                    return list;
+        }
+        
+        public Address getAddress(int empid) {
+            return (Address) sessionFactory.getCurrentSession().get(
+                    Address.class, empid);
+        }
+        
+        public void addAddress(Address address) {
+            sessionFactory.getCurrentSession().saveOrUpdate(address);
+     
+        }
+     
 }

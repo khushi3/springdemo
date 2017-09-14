@@ -18,19 +18,19 @@
         <table class="table table-striped">
             <form:hidden path="addressId"/>
             <tr>
-                <td>Name:</td>
+                <td>Pincode:</td>
                 <td><form:input path="pincode" /></td>
             </tr>
             <tr>
-                <td>Email:</td>
+                <td>City:</td>
                 <td><form:input path="city" /></td>
             </tr>
             <tr>
-                <td>Address:</td>
+                <td>State:</td>
                 <td><form:input path="state" /></td>
             </tr>
             <tr>
-                <td>Telephone:</td>
+                <td>Country:</td>
                 <td><form:input path="country" /></td>
             </tr>
             <tr>

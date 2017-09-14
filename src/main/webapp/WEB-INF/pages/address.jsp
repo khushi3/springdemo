@@ -17,8 +17,8 @@
 		<h1><spring:message code="label.address.header"/></h1>
 		<div class="container">
 		<div class="pull-right">
-			<spring:message code="label.newemployee.header"/>
-			 <a class="btn btn-primary" href="newEmployee"><spring:message code="label.newEmployee.button"/></a>
+			<spring:message code="label.address.header"/>
+			 <a class="btn btn-primary" href="addemployeeAddress"><spring:message code="label.newEmployee.button"/></a>
 		</div>
 		<table  class="table table-striped">
           <tr>
@@ -41,7 +41,10 @@
 		
 		</div>
 		
-	
+	<div>
+			<spring:message code="label.goBackToPreviousPage.address"/>
+			 <a class="btn btn-primary" href="backToEmployee"><spring:message code="label.newEmployee.button"/></a>
+		</div>
 	</div>
 	<script src="webjars/jquery/1.9.1/jquery.min.js"></script>
 	<script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>

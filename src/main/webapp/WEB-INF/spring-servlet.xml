@@ -24,13 +24,35 @@
     <mvc:resources mapping="/resources/**" location="/resources/" />
     <mvc:resources mapping="/webjars/**" location="/webjars/"/>
  
+  <!-- <bean id="contentNegotiationManager" class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean">
+        <property name="parameterName" value="type"/>
+        <property name="favorParameter" value="true"/>
+        <property name="ignoreUnknownPathExtensions" value="false"/>
+        <property name="ignoreAcceptHeader" value="false"/>
+        <property name="useJaf" value="true"/>
+    </bean> -->
+    
     <!-- View Resolver -->
+    <!--  <mvc:view-resolvers>
+        <mvc:content-negotiation>
+            <mvc:default-views>
+                <bean class="com.emids.view.ItextPdfView"/>
+            </mvc:default-views>
+        </mvc:content-negotiation>
+        <mvc:jsp prefix="/WEB-INF/pages/" suffix=".jsp"/>
+    </mvc:view-resolvers> -->
     <bean
         class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/pages/" />
         <property name="suffix" value=".jsp" />
     </bean>
  
+<!--  <bean id="viewResolver"
+  class="org.springframework.web.servlet.view.ResourceBundleViewResolver">
+  <property name="order" value="1"></property>
+  <property name="basename" value="views"></property>
+ </bean>
+  -->
     <!-- DataSource -->
     <bean class="org.springframework.jdbc.datasource.DriverManagerDataSource"
         id="dataSource">
