@@ -12,20 +12,31 @@
 <link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-<div class="container" style="text-align: center">
-    <p><font color="red">${errorMessage}</font></p>
-    <form action="employeeList" method="POST">
-    <fieldset class="form-group">
-       <label>Name</label> 
-       <input name="name" type="text" required="required" /> 
-       </fieldset>
-       <fieldset class="form-group">
-       <label>Password</label>
-        <input name="password" type="password" required="required" /> </fieldset>
-        <fieldset class="form-group">
-       <input type="submit" class="btn btn-success" /></fieldset>
-    </form>
+    <div class="container" style= "margin: 50px;">
+	<div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Welcome</h3>
+                </div>
+                <div class="panel-body">
+                    <form role="form" action="employeeList" method="POST">
+                        <fieldset>
+                            <div class="form-group">
+                                <input class="form-control" placeholder="UserName" name="name" type="text" autofocus>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" placeholder="Password" name="password" type="password" value="">
+                            </div>
+                            <!-- Change this to a button or input when using this as a form -->
+                            <button type="submit" class="btn btn-success btn-block">Login</button>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
+</div>
     <script src="webjars/jquery/1.9.1/jquery.min.js"></script>
 	<script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </body>

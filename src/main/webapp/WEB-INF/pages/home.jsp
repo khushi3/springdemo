@@ -47,9 +47,9 @@
 		</div>
 		<div class="container pull-right">
 	<div><spring:message code="label.exposeData"/> <a class="btn btn-primary" href="employeeJsonData">JsonData</a></div></br>
-	<div><spring:message code="label.exportAsPdf"/> <a class="btn btn-primary" href="downloadPDF">Download Pdf</a></div></br>
-		<div><spring:message code="label.exportAsXlsx"/> <a class="btn btn-primary" href="downloadXlsx">Download Xlsx</a></div></br>
-				<div><spring:message code="label.exportAsCsv"/> <a class="btn btn-primary" href="downloadCsv">Download Csv</a></div>
+	<div><spring:message code="label.exportAsPdf"/> <a class="btn btn-primary" href="downloadPDF"><i class="glyphicon glyphicon-download" aria-hidden="true"></i>Download Pdf</a></div></br>
+		<div><spring:message code="label.exportAsXlsx"/> <a class="btn btn-primary" href="downloadXlsx"><i class="glyphicon glyphicon-download" aria-hidden="true"></i>Download Xlsx</a></div></br>
+				<div><spring:message code="label.exportAsCsv"/> <a class="btn btn-primary" href="downloadCsv"><i class="glyphicon glyphicon-download" aria-hidden="true"></i>Download Csv</a></div>
 	</div>
 	</div>
 	<script src="webjars/jquery/1.9.1/jquery.min.js"></script>
