@@ -13,7 +13,7 @@ import com.lowagie.text.Document;
 import com.lowagie.text.Table;
 import com.lowagie.text.pdf.PdfWriter;
 
-public class PdfEmpListReport extends AbstractPdfView {
+public class PdfViewReport extends AbstractPdfView {
 
 @Override
 protected void buildPdfDocument(Map<String, Object> model, Document document, PdfWriter writer, HttpServletRequest request,

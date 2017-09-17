@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.codehaus.jackson.JsonGenerationException;
 import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
-import org.jboss.logging.Logger;
+//import org.jboss.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -19,15 +19,16 @@ import org.springframework.web.servlet.ModelAndView;
 import com.emids.model.Address;
 import com.emids.model.Employee;
 import com.emids.service.EmployeeService;
-import com.emids.view.PdfEmpListReport;
+import com.emids.view.XlsxViewReport;
+import com.emids.view.PdfViewReport;
 
  
 @Controller 
 public class EmployeeController {
  
-    private static final Logger logger = Logger
+  /*  private static final Logger logger = Logger
             .getLogger(EmployeeController.class);
-    
+    */
  
     public EmployeeController() {
         System.out.println("EmployeeController()");
@@ -148,11 +149,38 @@ public class EmployeeController {
     @RequestMapping(value= "/downloadPDF", method = RequestMethod.GET)
     public ModelAndView getDocuments(ModelAndView model) {
     	 List<Employee> listOfEmployee = employeeService.getAllEmployees();
-    	 return new ModelAndView(new PdfEmpListReport(), "employeeList", listOfEmployee);
+    	 return new ModelAndView(new PdfViewReport(), "employeeList", listOfEmployee);
        // model.addAttribute("listOfEmployee", listOfEmployee);
        // return "EmployeePdf";
 
     }
+    
+    /*  generate xlsx*/
+    @RequestMapping(value= "/downloadXlsx", method = RequestMethod.GET)
+    public ModelAndView getDocumentsXlsx(ModelAndView model) {
+    	 List<Employee> listOfEmployee = employeeService.getAllEmployees();
+    	 return new ModelAndView(new XlsxViewReport(), "employeeList", listOfEmployee);
+       // model.addAttribute("listOfEmployee", listOfEmployee);
+       // return "EmployeePdf";
+
+    }
+    
+    /*  generate csv*/
+  /*  @RequestMapping(value= "/downloadCsv", method = RequestMethod.GET)
+    public ModelAndView getCsv(ModelAndView model) throws IOException {
+    	String[] header = { "EmpName", "Email", "Address", "Telephone"};
+    	 List<Employee> listOfEmployee = employeeService.getAllEmployees();
+    	 ModelAndView model = new ModelAndView("ViewCSV");
+    	  //  model.addObject("csvData", listOfEmployee);
+    	    model.addObject("csvHeader", header);
+    	 
+    	    return model;
+    	// return new ModelAndView(new CsvViewReport(), "employeeList", listOfEmployee);
+       // model.addAttribute("listOfEmployee", listOfEmployee);
+       // return "EmployeePdf";
+
+    }*/
+    
     //@RequestMapping(value = "/generatepdf", method = RequestMethod.GET)
   // public ModelAndView generatePdf(HttpServletRequest request,
     //  HttpServletResponse response,Model model) throws Exception {

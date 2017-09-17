@@ -137,6 +137,19 @@
     <artifactId>itext</artifactId>
     <version>2.1.7</version>
 </dependency>
+<!-- xlsx view -->
+ <dependency>
+ <groupId>org.apache.poi</groupId>
+ <artifactId>poi-ooxml</artifactId>
+ <version>3.14</version>
+ </dependency>
+ <!-- https://mvnrepository.com/artifact/net.sf.supercsv/super-csv-java8 -->
+<dependency>
+    <groupId>net.sf.supercsv</groupId>
+    <artifactId>super-csv-java8</artifactId>
+    <version>2.4.0</version>
+</dependency>
+ 
 
        </dependencies>
        <build>

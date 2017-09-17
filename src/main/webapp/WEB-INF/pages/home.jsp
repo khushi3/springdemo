@@ -45,9 +45,11 @@
 		</table>
 		
 		</div>
-		<div class="container">
-	<div class="pull-right"><spring:message code="label.exposeData"/> <a class="btn btn-primary" href="employeeJsonData">Expose jsonData</a></div>
-	<div class="pull-left"><spring:message code="label.exportAsPdf"/> <a class="btn btn-primary" href="downloadPDF">Export Pdf</a></div>
+		<div class="container pull-right">
+	<div><spring:message code="label.exposeData"/> <a class="btn btn-primary" href="employeeJsonData">JsonData</a></div></br>
+	<div><spring:message code="label.exportAsPdf"/> <a class="btn btn-primary" href="downloadPDF">Download Pdf</a></div></br>
+		<div><spring:message code="label.exportAsXlsx"/> <a class="btn btn-primary" href="downloadXlsx">Download Xlsx</a></div></br>
+				<div><spring:message code="label.exportAsCsv"/> <a class="btn btn-primary" href="downloadCsv">Download Csv</a></div>
 	</div>
 	</div>
 	<script src="webjars/jquery/1.9.1/jquery.min.js"></script>
