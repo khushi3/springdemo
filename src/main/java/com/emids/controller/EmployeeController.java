@@ -147,10 +147,10 @@ public class EmployeeController {
 		
 		String checked = req.getParameter("checked") == null ? "": req.getParameter("checked");
 		
-		ArrayList<BigDecimal> decArray = new ArrayList<BigDecimal>();
+		ArrayList<Integer> decArray = new ArrayList<Integer>();
 		
 		for( String s : checked.split(",") ){
-			decArray.add( new BigDecimal(s) );
+			decArray.add( new Integer(s) );
 		}
 		
 		boolean bok = employeeService.deleteEmployeeByNumber(decArray);
@@ -159,13 +159,12 @@ public class EmployeeController {
 	}
 	
  
-    @RequestMapping(value = "/editEmployee", method = RequestMethod.GET)
+    @RequestMapping(value = "/editEmployee", method = RequestMethod.POST)
     public ModelAndView editContact(HttpServletRequest request) {
         int employeeId = Integer.parseInt(request.getParameter("id"));
         Employee employee = employeeService.getEmployee(employeeId);
         ModelAndView model = new ModelAndView("EmployeeForm");
         model.addObject("employee", employee);
- 
         return model;
     }
   /*  generate pdf*/

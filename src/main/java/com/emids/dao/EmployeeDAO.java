@@ -20,7 +20,7 @@ public interface EmployeeDAO {
    
     public Employee getEmployee(int employeeid);
     
-    public boolean deleteEmployeeByNumber(ArrayList<BigDecimal> id);
+    public boolean deleteEmployeeByNumber(ArrayList<Integer> id);
     
     public List<Address> getAllAddress();
     

@@ -65,16 +65,16 @@
 		</div>
 		<div class="container pull-right">
 		<div class="form-group">
-			<button type="button" id="buttonSearch" class="btn btn-info">
+			<!-- <button type="button" id="buttonSearch" class="btn btn-info">
 				<span class="glyphicon glyphicon-search"></span> Search
 			</button>
 			<button type="button" id="buttonEdit" class="btn btn-success">
 				<span class="glyphicon glyphicon-plus-sign"></span> edit
-			</button>
+			</button> -->
 			<button type="button" id="buttonDelete" class="btn btn-danger">
 				<span class="glyphicon glyphicon-minus-sign"></span> Delete
 			</button>
-	     <a class="btn btn-primary" href="employeeJsonData">JsonData</a>
+	<a class="btn btn-primary" href="employeeJsonData">JsonData</a>
 	<a class="btn btn-primary" href="downloadPDF"><i class="glyphicon glyphicon-download" aria-hidden="true"></i>Download Pdf</a>
 	<a class="btn btn-primary" href="downloadXlsx"><i class="glyphicon glyphicon-download" aria-hidden="true"></i>Download Xlsx</a>
 	<a class="btn btn-primary" href="downloadCsv"><i class="glyphicon glyphicon-download" aria-hidden="true"></i>Download Csv</a>

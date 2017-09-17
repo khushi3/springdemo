@@ -64,7 +64,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     public Address getAddress(int empid) {
         return employeeDAO.getAddress(empid);
     }
-    public boolean deleteEmployeeByNumber(ArrayList<BigDecimal> id){
+    public boolean deleteEmployeeByNumber(ArrayList<Integer> id){
 		return employeeDAO.deleteEmployeeByNumber(id);
 	}
 }

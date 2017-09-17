@@ -19,13 +19,13 @@ public class XlsxViewReport extends AbstractXlsxView {
 	                                      HttpServletResponse response) throws Exception {
 
 	        // set the file name
-	        response.setHeader("Content-Disposition", "attachment; filename=\"fruits.xlsx\"");
+	        response.setHeader("Content-Disposition", "attachment; filename=\"employee.xlsx\"");
 
 	        @SuppressWarnings("unchecked")
 	        List<Employee> empList =  (List<Employee>) model.get("employeeList");
 
 	        // create sheet
-	        Sheet sheet = workbook.createSheet("Fruits Xlsx");
+	        Sheet sheet = workbook.createSheet("Employee Xlsx");
 
 	        // create header
 	        Row header = sheet.createRow(0);

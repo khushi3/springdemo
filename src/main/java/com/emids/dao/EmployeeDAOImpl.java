@@ -15,6 +15,7 @@ import com.emids.model.Employee;
 @Repository
 public class EmployeeDAOImpl implements EmployeeDAO {
  
+	Employee employee;
     @Autowired
     private SessionFactory sessionFactory;
  
@@ -75,7 +76,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
      
         }
         @SuppressWarnings({ "rawtypes", "unused" })
-		public boolean deleteEmployeeByNumber(ArrayList<BigDecimal> id){
+		public boolean deleteEmployeeByNumber(ArrayList<Integer> id){
     		
     		Query query = sessionFactory.getCurrentSession().getNamedQuery("employee.deleteEmployeeByNumber");
     		

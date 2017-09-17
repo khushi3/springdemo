@@ -19,7 +19,7 @@ public interface EmployeeService {
  
     public Employee updateEmployee(Employee employee);
     
-    public boolean deleteEmployeeByNumber(ArrayList<BigDecimal> id);
+    public boolean deleteEmployeeByNumber(ArrayList<Integer> id);
 
 	public List<Address> getAllAddress();
 	
