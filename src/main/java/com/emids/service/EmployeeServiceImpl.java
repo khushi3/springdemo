@@ -1,5 +1,7 @@
 package com.emids.service;
 
+import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -62,4 +64,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     public Address getAddress(int empid) {
         return employeeDAO.getAddress(empid);
     }
+    public boolean deleteEmployeeByNumber(ArrayList<BigDecimal> id){
+		return employeeDAO.deleteEmployeeByNumber(id);
+	}
 }

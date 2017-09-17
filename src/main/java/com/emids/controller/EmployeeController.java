@@ -1,9 +1,14 @@
 package com.emids.controller;
 
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.codehaus.jackson.JsonGenerationException;
 import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
@@ -135,6 +140,24 @@ public class EmployeeController {
         employeeService.deleteEmployee(employeeId);
         return new ModelAndView("redirect:/employeeList");
     }
+    
+    @RequestMapping(value="/deleteClient", method=RequestMethod.POST)
+	@ResponseBody
+	public boolean deleteClient( HttpServletRequest req, HttpServletResponse resp ) throws ParseException{
+		
+		String checked = req.getParameter("checked") == null ? "": req.getParameter("checked");
+		
+		ArrayList<BigDecimal> decArray = new ArrayList<BigDecimal>();
+		
+		for( String s : checked.split(",") ){
+			decArray.add( new BigDecimal(s) );
+		}
+		
+		boolean bok = employeeService.deleteEmployeeByNumber(decArray);
+		
+		return bok;
+	}
+	
  
     @RequestMapping(value = "/editEmployee", method = RequestMethod.GET)
     public ModelAndView editContact(HttpServletRequest request) {

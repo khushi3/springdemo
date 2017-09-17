@@ -1,5 +1,7 @@
 package com.emids.dao;
 
+import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.SessionFactory;
@@ -72,5 +74,22 @@ public class EmployeeDAOImpl implements EmployeeDAO {
             sessionFactory.getCurrentSession().saveOrUpdate(address);
      
         }
+        @SuppressWarnings({ "rawtypes", "unused" })
+		public boolean deleteEmployeeByNumber(ArrayList<BigDecimal> id){
+    		
+    		Query query = sessionFactory.getCurrentSession().getNamedQuery("employee.deleteEmployeeByNumber");
+    		
+    		if( id != null ){
+    			query.setParameterList("id", id);
+    			
+    			int cont = query.executeUpdate();
+    			
+    			return true;
+    		}
+    		else{
+    			return false;
+    		}
+    	}
+
      
 }

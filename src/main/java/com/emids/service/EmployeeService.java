@@ -1,5 +1,7 @@
 package com.emids.service;
 
+import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.emids.model.Address;
@@ -16,6 +18,8 @@ public interface EmployeeService {
     public Employee getEmployee(int employeeid);
  
     public Employee updateEmployee(Employee employee);
+    
+    public boolean deleteEmployeeByNumber(ArrayList<BigDecimal> id);
 
 	public List<Address> getAllAddress();
 	

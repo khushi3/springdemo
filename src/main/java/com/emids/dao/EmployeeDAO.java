@@ -1,6 +1,8 @@
 package com.emids.dao;
 
 
+import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.emids.model.Address;
@@ -18,8 +20,9 @@ public interface EmployeeDAO {
    
     public Employee getEmployee(int employeeid);
     
-    public List<Address> getAllAddress();
+    public boolean deleteEmployeeByNumber(ArrayList<BigDecimal> id);
     
+    public List<Address> getAllAddress();
     
     public void addAddress(Address address);
     
